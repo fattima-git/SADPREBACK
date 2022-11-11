@@ -18,6 +18,15 @@ const getRegistroClinico = async(id) => {
     }
 }
 
+const getSintomas = async() => {
+    try {
+        datos = await db.pool.query('SELECT * FROM public.sintomas');
+        return datos.rows;
+    } catch (error) {
+        return null;
+    }
+}
+
 const setPaciente = async(req) => {
     const {nombres, apellido, sexo, nro_documento, edad} = req.body
     try {
@@ -41,6 +50,7 @@ const setRegistroClinico = async(req) => {
 module.exports = {
     getRegistrosClinicos,
     getRegistroClinico,
+    getSintomas,
     setPaciente,
     setRegistroClinico
   }

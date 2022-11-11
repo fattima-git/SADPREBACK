@@ -8,8 +8,11 @@ const router = express.Router();
     });
 
     router.post('/cargarregistro', async (req, res) => {
-        console.log(req.body);
         res.json(await registros_clinicos.setRegistroClinico(req));
+    });
+
+    router.get('/sintomas', async (req, res) => {
+        res.json( await registros_clinicos.getSintomas());
     });
 
     /**

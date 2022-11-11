@@ -7,6 +7,10 @@ const getRegistroClinico = async(id) => {
     return await registros_clinicos.getRegistroClinico(id);
 };
 
+const getSintomas = async() => {
+    return await registros_clinicos.getSintomas();
+};
+
 const setPaciente = async(req) => {
     return await registros_clinicos.setPaciente(req);
 };
@@ -18,6 +22,7 @@ const setRegistroClinico = async(req) => {
 module.exports = {
     getRegistrosClinicos,
     getRegistroClinico,
+    getSintomas,
     setPaciente,
     setRegistroClinico
 };
